@@ -1,0 +1,587 @@
+{
+	"info": {
+		"_postman_id": "887f3216-f3ba-4a1b-b46d-34bc43ce4144",
+		"name": "Pokémon API Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4772245"
+	},
+	"item": [
+		{
+			"name": "Pokémon API Test",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Salva un Pokémon casuale\", function () {\r",
+							"    let response = pm.response.json();\r",
+							"    let pokemonList = response.results;\r",
+							"    \r",
+							"    if (pokemonList && pokemonList.length > 0) {\r",
+							"        let randomIndex = Math.floor(Math.random() * pokemonList.length);\r",
+							"        let pokemonName = pokemonList[randomIndex].name;\r",
+							"        \r",
+							"        pm.environment.set(\"pokemon_name\", pokemonName);\r",
+							"        console.log(\"🔹 Pokémon casuale: \" + pokemonName);\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pokeapi.co/api/v2/pokemon/",
+					"protocol": "https",
+					"host": [
+						"pokeapi",
+						"co"
+					],
+					"path": [
+						"api",
+						"v2",
+						"pokemon",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Pokémon API Test",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://pokeapi.co/api/v2/pokemon/",
+							"protocol": "https",
+							"host": [
+								"pokeapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"v2",
+								"pokemon",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 02 Mar 2025 07:46:29 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "307"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=86400, s-maxage=86400"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"589-5Lx/WwOQuJVbt5KMX1VvVdJUdKY\""
+						},
+						{
+							"key": "function-execution-id",
+							"value": "iko1qreaqxam"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31556926"
+						},
+						{
+							"key": "x-cloud-trace-context",
+							"value": "748448aab2c38e0975b3f5b8f4e7eecf"
+						},
+						{
+							"key": "x-country-code",
+							"value": "US"
+						},
+						{
+							"key": "x-orig-accept-language",
+							"value": "en-US,en;q=0.9"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-served-by",
+							"value": "cache-mia-kmia1760049-MIA"
+						},
+						{
+							"key": "x-cache",
+							"value": "HIT"
+						},
+						{
+							"key": "x-cache-hits",
+							"value": "0"
+						},
+						{
+							"key": "x-timer",
+							"value": "S1737712992.552380,VS0,VE1"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding,cookie,need-authorization, x-fh-requested-host, accept-encoding"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "HIT"
+						},
+						{
+							"key": "Age",
+							"value": "51924"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Report-To",
+							"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=Rw%2BrfN4M5L40OxKwlVxGiQMd749qjWcXpB7fetilHHHP4TtQnljnKRukI0AGFaowZaukbZg8eZ%2BPwEXLxdZhgGSU7%2FMPHEZFHxXa2DRa21KJciYYo8s5VkJznfwe\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "NEL",
+							"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "919f47d568b2204e-IAD"
+						},
+						{
+							"key": "server-timing",
+							"value": "cfL4;desc=\"?proto=TCP&rtt=2091&min_rtt=1935&rtt_var=837&sent=2&recv=5&lost=0&retrans=0&sent_bytes=219&recv_bytes=966&delivery_rate=748320&cwnd=152&unsent_bytes=0&cid=22e5035e098b2302&ts=19&x=0\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 1304,\n    \"next\": \"https://pokeapi.co/api/v2/pokemon/?offset=20&limit=20\",\n    \"previous\": null,\n    \"results\": [\n        {\n            \"name\": \"bulbasaur\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/1/\"\n        },\n        {\n            \"name\": \"ivysaur\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/2/\"\n        },\n        {\n            \"name\": \"venusaur\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/3/\"\n        },\n        {\n            \"name\": \"charmander\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/4/\"\n        },\n        {\n            \"name\": \"charmeleon\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/5/\"\n        },\n        {\n            \"name\": \"charizard\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/6/\"\n        },\n        {\n            \"name\": \"squirtle\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/7/\"\n        },\n        {\n            \"name\": \"wartortle\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/8/\"\n        },\n        {\n            \"name\": \"blastoise\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/9/\"\n        },\n        {\n            \"name\": \"caterpie\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/10/\"\n        },\n        {\n            \"name\": \"metapod\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/11/\"\n        },\n        {\n            \"name\": \"butterfree\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/12/\"\n        },\n        {\n            \"name\": \"weedle\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/13/\"\n        },\n        {\n            \"name\": \"kakuna\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/14/\"\n        },\n        {\n            \"name\": \"beedrill\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/15/\"\n        },\n        {\n            \"name\": \"pidgey\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/16/\"\n        },\n        {\n            \"name\": \"pidgeotto\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/17/\"\n        },\n        {\n            \"name\": \"pidgeot\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/18/\"\n        },\n        {\n            \"name\": \"rattata\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/19/\"\n        },\n        {\n            \"name\": \"raticate\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/20/\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Pokémon API Test",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://pokeapi.co/api/v2/pokemon/",
+							"protocol": "https",
+							"host": [
+								"pokeapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"v2",
+								"pokemon",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 02 Mar 2025 07:50:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "307"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=86400, s-maxage=86400"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"589-5Lx/WwOQuJVbt5KMX1VvVdJUdKY\""
+						},
+						{
+							"key": "function-execution-id",
+							"value": "iko1qreaqxam"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31556926"
+						},
+						{
+							"key": "x-cloud-trace-context",
+							"value": "748448aab2c38e0975b3f5b8f4e7eecf"
+						},
+						{
+							"key": "x-country-code",
+							"value": "US"
+						},
+						{
+							"key": "x-orig-accept-language",
+							"value": "en-US,en;q=0.9"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-served-by",
+							"value": "cache-mia-kmia1760049-MIA"
+						},
+						{
+							"key": "x-cache",
+							"value": "HIT"
+						},
+						{
+							"key": "x-cache-hits",
+							"value": "0"
+						},
+						{
+							"key": "x-timer",
+							"value": "S1737712992.552380,VS0,VE1"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding,cookie,need-authorization, x-fh-requested-host, accept-encoding"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "HIT"
+						},
+						{
+							"key": "Age",
+							"value": "52170"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Report-To",
+							"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=FJJ8AgvadrnUo9VrqhPIVgezsjqfUU3m7w5%2FwO0xoeR9Ynq%2FIA%2BsesCotqVwfBD0xAEFjNYS%2BcAb%2FyDa7cTyx0xVF3%2Fnwb%2FxZt%2B5kuBttiRoSigz5oD1C8tjA7TW\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "NEL",
+							"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "919f4dd939e78023-IAD"
+						},
+						{
+							"key": "server-timing",
+							"value": "cfL4;desc=\"?proto=TCP&rtt=7294&min_rtt=1851&rtt_var=11092&sent=5&recv=8&lost=0&retrans=0&sent_bytes=2395&recv_bytes=1225&delivery_rate=1515436&cwnd=211&unsent_bytes=0&cid=5e08c414ed7c056e&ts=21208&x=0\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 1304,\n    \"next\": \"https://pokeapi.co/api/v2/pokemon/?offset=20&limit=20\",\n    \"previous\": null,\n    \"results\": [\n        {\n            \"name\": \"bulbasaur\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/1/\"\n        },\n        {\n            \"name\": \"ivysaur\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/2/\"\n        },\n        {\n            \"name\": \"venusaur\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/3/\"\n        },\n        {\n            \"name\": \"charmander\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/4/\"\n        },\n        {\n            \"name\": \"charmeleon\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/5/\"\n        },\n        {\n            \"name\": \"charizard\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/6/\"\n        },\n        {\n            \"name\": \"squirtle\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/7/\"\n        },\n        {\n            \"name\": \"wartortle\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/8/\"\n        },\n        {\n            \"name\": \"blastoise\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/9/\"\n        },\n        {\n            \"name\": \"caterpie\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/10/\"\n        },\n        {\n            \"name\": \"metapod\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/11/\"\n        },\n        {\n            \"name\": \"butterfree\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/12/\"\n        },\n        {\n            \"name\": \"weedle\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/13/\"\n        },\n        {\n            \"name\": \"kakuna\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/14/\"\n        },\n        {\n            \"name\": \"beedrill\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/15/\"\n        },\n        {\n            \"name\": \"pidgey\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/16/\"\n        },\n        {\n            \"name\": \"pidgeotto\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/17/\"\n        },\n        {\n            \"name\": \"pidgeot\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/18/\"\n        },\n        {\n            \"name\": \"rattata\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/19/\"\n        },\n        {\n            \"name\": \"raticate\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon/20/\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Pokémon API Test_pokemon_value",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Salva un'abilità casuale\", function () {\r",
+							"    let response = pm.response.json();\r",
+							"    let abilities = response.abilities;\r",
+							"    \r",
+							"    if (abilities && abilities.length > 0) {\r",
+							"        let randomIndex = Math.floor(Math.random() * abilities.length);\r",
+							"        let abilityName = abilities[randomIndex].ability.name;\r",
+							"        \r",
+							"        pm.environment.set(\"ability_name\", abilityName);\r",
+							"        console.log(\"🔹 Abilità casuale: \" + abilityName);\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pokeapi.co/api/v2/pokemon/bulbasaur",
+					"protocol": "https",
+					"host": [
+						"pokeapi",
+						"co"
+					],
+					"path": [
+						"api",
+						"v2",
+						"pokemon",
+						"bulbasaur"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pokémon API Test_ability_value",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pokeapi.co/api/v2/ability/overgrow",
+					"protocol": "https",
+					"host": [
+						"pokeapi",
+						"co"
+					],
+					"path": [
+						"api",
+						"v2",
+						"ability",
+						"overgrow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pokémon API Test_ability_value Copy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pokeapi.co/api/v2/ability/overgrow",
+					"protocol": "https",
+					"host": [
+						"pokeapi",
+						"co"
+					],
+					"path": [
+						"api",
+						"v2",
+						"ability",
+						"overgrow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://pokeapi.co/api/v2/pokemon/?pokemon_name =bulbasaur&ability_name=overgrow",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Salva un Pokémon casuale\", function () {\r",
+							"    let response = pm.response.json();\r",
+							"    let pokemonList = response.results;\r",
+							"    \r",
+							"    if (pokemonList && pokemonList.length > 0) {\r",
+							"        let randomIndex = Math.floor(Math.random() * pokemonList.length);\r",
+							"        let pokemonName = pokemonList[randomIndex].name;\r",
+							"        \r",
+							"        pm.environment.set(\"pokemon_name\", pokemonName);\r",
+							"        console.log(\"🔹 Pokémon casuale: \" + pokemonName);\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pokeapi.co/api/v2/pokemon/?pokemon_name =bulbasaur&ability_name=overgrow",
+					"protocol": "https",
+					"host": [
+						"pokeapi",
+						"co"
+					],
+					"path": [
+						"api",
+						"v2",
+						"pokemon",
+						""
+					],
+					"query": [
+						{
+							"key": "pokemon_name ",
+							"value": "bulbasaur"
+						},
+						{
+							"key": "ability_name",
+							"value": "overgrow"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://pokeapi.co/api/v2/pokemon/?pokemon_name =bulbasaur&ability_name=overgrow",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Salva un Pokémon casuale\", function () {\r",
+							"    let response = pm.response.json();\r",
+							"    let pokemonList = response.results;\r",
+							"    \r",
+							"    if (pokemonList && pokemonList.length > 0) {\r",
+							"        let randomIndex = Math.floor(Math.random() * pokemonList.length);\r",
+							"        let pokemonName = pokemonList[randomIndex].name;\r",
+							"        \r",
+							"        pm.environment.set(\"pokemon_name\", pokemonName);\r",
+							"        console.log(\"🔹 Pokémon casuale: \" + pokemonName);\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pokeapi.co/api/v2/pokemon/?pokemon_name =bulbasaur&ability_name=overgrow",
+					"protocol": "https",
+					"host": [
+						"pokeapi",
+						"co"
+					],
+					"path": [
+						"api",
+						"v2",
+						"pokemon",
+						""
+					],
+					"query": [
+						{
+							"key": "pokemon_name ",
+							"value": "bulbasaur"
+						},
+						{
+							"key": "ability_name",
+							"value": "overgrow"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
